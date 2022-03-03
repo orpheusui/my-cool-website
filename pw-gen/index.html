@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Password Generator</h1>
+  </header>
+  <main>
+    <div class="flex-container">
+      <div class="column" id="inputColumn">
+        <ul>
+          <li>
+            <label for="length">Password length</label>
+            <input type="number" placeholder="8" id="length" value="length">
+          </li>
+
+          <li>
+            <input type="checkbox" id="lowercase" value="lowercase">
+            <label for="length">lowercase</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="uppercase" value="uppercase">
+            <label for="length">UPPERCASE</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="number" value="number">
+            <label for="length">Numbers</label>
+          </li>
+
+          <li>
+            <input type="checkbox" id="special" value="special">
+            <label for="length">Special characters</label>
+          </li>
+
+          <br>
+          <li id="generate">
+            <button onclick="document.getElementById('output').innerHTML = generatePassword()">Generate</button>
+          </li>
+        </ul>
+      </div>
+      <div class="column" id="outputColumn">
+        <br>
+        <label for="output">Output</label><br>
+        <textarea readonly id="output"></textarea>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+
+  <script>
+    function generatePassword () {
+    var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    var special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+    var selectedCharacters = [];
+
+    var checkboxes = [
+      document.getElementById("lowercase").checked,
+      document.getElementById("uppercase").checked,
+      document.getElementById("number").checked,
+      document.getElementById("special").checked,
+    ]
+
+    if (
+      checkboxes[0] == checkboxes[1] &&
+      checkboxes[1] == checkboxes[2] &&
+      checkboxes[2] == checkboxes[3] &&
+      checkboxes[0] == false) {return null}
+      
+
+    if (checkboxes[0]) {
+      selectedCharacters = selectedCharacters.concat(lowercase);
+    }
+
+    if (checkboxes[1]) {
+      selectedCharacters = selectedCharacters.concat(uppercase);
+    }
+
+    if (checkboxes[2]) {
+      selectedCharacters = selectedCharacters.concat(number);
+    }
+
+    if (checkboxes[3]) {
+      selectedCharacters = selectedCharacters.concat(special);
+    }
+
+    var password = "";
+
+    for (var i = 0; i < document.getElementById("length").value ; i++) {
+      password += selectedCharacters[Math.floor(Math.random() * selectedCharacters.length)];
+    }
+
+    return password;
+  }
+  </script>
+</body>
+
+</html>

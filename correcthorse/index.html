@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Correct Horse</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Correct Horse</h1>
+  </header>
+  <main>
+    <div class="flex-container">
+      <div class="column" id="inputColumn">
+        <ul>
+          <li>
+            <label for="length">Number of words</label>
+            <input type="number" value="4" min="1" id="length" value="length">
+          </li>
+
+          <h3>Capitalization</h3>
+
+          <li>
+            <input checked type="radio" name="capitals" id="lowercase" value="lowercase">
+            <label for="capitals">lowercase</label>
+          </li>
+
+          <li>
+            <input type="radio" name="capitals" id="uppercase" value="uppercase">
+            <label for="capitals">UPPERCASE</label>
+          </li>
+
+          <li>
+            <input type="radio" name="capitals" id="capitalized" value="capitalized">
+            <label for="capitals">Capitalized</label>
+          </li>
+
+          <h3>Separators</h3>
+
+          <li>
+            <select id="separator">
+              <option value="">None</option>
+              <option value=" ">{space}</option>
+              <option value="-">-</option>
+              <option value="_">_</option>
+              <option value="*">*</option>
+              <option value="#">#</option>
+              <option value="/">/</option>
+              <option value="\">\</option>
+            </select>
+          </li>
+
+          <br>
+          <li id="generate">
+            <button onclick="document.getElementById('output').innerHTML = horse()">Generate</button>
+          </li>
+        </ul>
+      </div>
+      <div class="column" id="outputColumn">
+        <label for="output">Output</label><br>
+        <textarea readonly id="output"></textarea>
+      </div>
+    </div>
+    <p id="endtag">stackcomfy</p>
+  </main>
+  <footer></footer>
+
+  <script src="correcthorsebatterystaple.js"></script>
+  <script src="largewordlist.js"></script>
+</body>
+
+</html>
