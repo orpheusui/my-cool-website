@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Correct Horse</title>
+  <title>Wrong Dog Motor Clip</title>
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
   <header>
-    <h1>Correct Horse</h1>
+    <h1>Wrong Dog Motor Clip</h1>
   </header>
   <main>
     <div class="flex-container">
@@ -23,17 +23,7 @@
           <h3>Capitalization</h3>
 
           <li>
-            <input checked type="radio" name="capitals" id="lowercase" value="lowercase">
-            <label for="capitals">lowercase</label>
-          </li>
-
-          <li>
-            <input type="radio" name="capitals" id="uppercase" value="uppercase">
-            <label for="capitals">UPPERCASE</label>
-          </li>
-
-          <li>
-            <input type="radio" name="capitals" id="capitalized" value="capitalized">
+            <input type="checkbox" name="capitals" id="capitals">
             <label for="capitals">Capitalized</label>
           </li>
 
@@ -61,6 +51,7 @@
       <div class="column" id="outputColumn">
         <label for="output">Output</label><br>
         <textarea readonly id="output"></textarea>
+        <p id="outputLength"></p>
       </div>
     </div>
     <p id="endtag">stackcomfy</p>
