@@ -51,7 +51,14 @@ input#length {
     resize: none;
 }
 
-#endtag {
-    color: #999;
+footer {
     text-align: center;
+}
+
+.sourceLink {
+    color: #999;
+}
+
+.sourceLink:hover {
+    color: #555;
 }

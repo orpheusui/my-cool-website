@@ -17,7 +17,7 @@
         <ul>
           <li>
             <label for="length">Number of words</label>
-            <input type="number" value="4" min="1" id="length" value="length">
+            <input type="number" value="4" min="1" max="10" id="length" value="length">
           </li>
 
           <h3>Capitalization</h3>
@@ -52,11 +52,16 @@
         <label for="output">Output</label><br>
         <textarea readonly id="output"></textarea>
         <p id="outputLength"></p>
+        <p id="entropy"></p>
       </div>
     </div>
-    <p id="endtag">stackcomfy</p>
   </main>
-  <footer></footer>
+  <footer>
+    <br>
+    <a class="sourceLink" href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt" target="_blank">https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt</a>
+    <br><br>
+    <a class="sourceLink" href="https://generatepasswords.org/how-to-calculate-entropy/" target="_blank">https://generatepasswords.org/how-to-calculate-entropy/</a>
+  </footer>
 
   <script src="correcthorsebatterystaple.js"></script>
   <script src="largewordlist.js"></script>
